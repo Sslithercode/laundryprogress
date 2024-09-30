@@ -52,6 +52,7 @@ const Cam: React.FC = () => {
         <ExtendedCamera 
           ref={camera} 
           errorMessages={{}} // Provide default error messages or your custom ones
+          facingMode="environment" // Set the camera to use the environment camera
         />
       </div>
     
