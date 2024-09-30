@@ -50,7 +50,7 @@ export default function Home() {
         setLoading(false);
       } catch (err) {
         setError("Failed to fetch machines");
-        setLoading(false);
+        setLoading(false);  // comment extra line
       }
     };
 
