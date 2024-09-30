@@ -18,11 +18,7 @@ export default  async function Home() {
     }
   }
   
-  const res = await fetch(`${process.env.NEXT_PUBLIC_WASH_API_URL}/machines/all`,{
-    headers: {
-      'Cache-Control': 's-maxage=60, stale-while-revalidate', // Cache for 60 seconds
-    },
-});
+  const res = await fetch(`${process.env.NEXT_PUBLIC_WASH_API_URL}/machines/all`);
   const machines = await res.json();
   console.log('fetched');
 
