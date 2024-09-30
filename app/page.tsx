@@ -18,7 +18,9 @@ export default  async function Home() {
     }
   }
   
-  const res = await fetch(`${process.env.NEXT_PUBLIC_WASH_API_URL}/machines/all`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_WASH_API_URL}/machines/all`,{
+    cache: 'no-store',
+});
   const machines = await res.json();
   console.log('fetched');
 
