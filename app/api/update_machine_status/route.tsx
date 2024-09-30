@@ -64,7 +64,8 @@ export async function POST(req: Request) {
     const data = await response.json();
     const upd  = data.choices[0].message.content;
     const machine_status = JSON.parse(upd);
-    const res_new = await fetch(`${process.env.WASH_API_URL}/machines/${machine_status.machine_number}/start_wash`,
+    console.log(machine_status);
+    const res_new = await fetch(`${process.env.NEXT_PUBLIC_WASH_API_URL}/machines/${machine_status.machine_number}/start_wash`,
       {
         method: 'POST',
         headers: {
