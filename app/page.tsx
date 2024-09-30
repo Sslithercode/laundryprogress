@@ -17,11 +17,13 @@ export default  async function Home() {
         return <Badge variant="secondary" className="flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {status}</Badge>
     }
   }
-  const res = await fetch(`${process.env.WASH_API_URL}/machines/all`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${process.env.WASH_API_URL}/machines/all`,{
+    headers: {
+      'Cache-Control': 's-maxage=60, stale-while-revalidate', // Cache for 60 seconds
+    },
+});
   const machines = await res.json();
-
+  console.log('fetched');
 
 
   return (
