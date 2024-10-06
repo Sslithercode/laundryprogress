@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LaundryProgress
 
-## Getting Started
+**LaundryProgress** is a smart, AI-powered solution that helps users track the availability of laundry machines in real time. Built using the powerful **llama3-11b-vision** model, the application processes visual inputs to detect open laundry machines and provides up-to-date statuses.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **AI-Powered Machine Detection**: Utilizes llama3-11b-vision to process live images and detect available laundry machines.
+- **Real-Time Updates**: Get live updates on the status of machines to avoid unnecessary trips.
+- **User-Friendly Interface**: Simple and intuitive UI to monitor multiple machines at once.
+- **Flexible Integration**: Easily integrate with external APIs for laundry management services.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧰 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Backend**: Python, FastAPI
+- **AI Model**: llama3-11b-vision Groq
+- **Frontend**: React, Next.js
+- **Database**: Supbabase
+- **Cloud Hosting**: Vercel (API), Vercel (Frontend)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💡 How It Works
 
-## Learn More
+1. **Machine Monitoring**: The application relies on users to capture images of laundry machines.
+2. **AI Processing**: llama3-11b-vision processes the images, detecting whether a machine is open or in use.
+3. **Live Status Display**: The results are displayed on the frontend, showing available machines to users.
+4. **External API Fetching**: You can integrate the app with APIs like `process.env.WASH_API_URL/machines/all` to fetch additional data about the laundry machines.
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Live Demo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Check out the live demo: [LaundryProgress](https://laundryprogress.vercel.app)
+- 
+## 🛠️ Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repositories:
+   ```bash
+   git clone https://github.com/Sslithercode/laundryprogress.git
+   git clone https://github.com/Sslithercode/laundry_api.git
 
-## Deploy on Vercel
+2. Set enviornment variables
+   either run the api on localhost and set WASH_API_URL to localhost or deploy it 
+   set a groq api key
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run
+    either npm run dev  for dev or deploy to Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
